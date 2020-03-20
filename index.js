@@ -8,5 +8,15 @@ app.listen(3000, () => {
 
 app.get('/' , (req, res) => {
     console.log("access to / path");
-    res.send("Hello World !");
+    res.send(`
+        <!Doctype html>
+        <html>
+            <head>
+                <title>Projet 2</title>
+            </head>
+            <body>
+                <h1>Hello World !</h1>
+            </body>
+        </html>
+        `);
 });
