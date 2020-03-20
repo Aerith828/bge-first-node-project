@@ -7,14 +7,4 @@ app.listen(3000, () => {
     console.log("SERVER STARTED...");
 });
 
-app.get('/' , (req, res) => {
-    console.log("access to / path");
-    const html = fs
-        .readFileSync("./src/index.html")
-        .toString('utf8');
-    res.send(html);
-});
-
-app.get("/about" , (req,res) => {
-    res.send("about");
-})
+app.use(express.static('./public'));
