@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
@@ -8,15 +8,9 @@ app.listen(3000, () => {
 
 app.get('/' , (req, res) => {
     console.log("access to / path");
-    res.send(`
-        <!Doctype html>
-        <html>
-            <head>
-                <title>Projet 2</title>
-            </head>
-            <body>
-                <h1>Hello World !</h1>
-            </body>
-        </html>
-        `);
+    res.send();
 });
+
+app.get("/about" , (req,res) => {
+    res.send("about");
+})
