@@ -1,4 +1,5 @@
 const express = require("express");
+const fs = require("fs");
 
 const app = express();
 
@@ -8,7 +9,10 @@ app.listen(3000, () => {
 
 app.get('/' , (req, res) => {
     console.log("access to / path");
-    res.send();
+    const html = fs
+        .readFileSync("./src/index.html")
+        .toString('utf8');
+    res.send(html);
 });
 
 app.get("/about" , (req,res) => {
